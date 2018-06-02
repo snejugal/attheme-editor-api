@@ -1,0 +1,23 @@
+{
+  "name": "attheme-editor-api",
+  "version": "1.0.0",
+  "description": "A little package for handling .attheme editor API.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snejugal/attheme-editor-api.git"
+  },
+  "keywords": [
+    "attheme"
+  ],
+  "author": "SnejUgal <contact@snejugal.ru> (snejugal.ru)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snejugal/attheme-editor-api/issues"
+  },
+  "homepage": "https://github.com/snejugal/attheme-editor-api#readme",
+  "dependencies": {
+    "attheme-js": "^1.1.1",
+    "detect-node": "^2.0.3"
+  }
+}
