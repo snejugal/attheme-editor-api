@@ -1,4 +1,4 @@
-# attheme-editor-api
+# `attheme-editor-api`
 A little package for handling .attheme editor API.
 
 ## Installing
@@ -38,4 +38,4 @@ import * as atthemeEditorApi from "attheme-editor-api";
 })();
 ```
 
-If `attheme-editor-api` is run in Node.js, it will need `request` and `request-promise` to be installed. If it's run in browser, it will use `fetch`, so include a `fetch` polyfill if needed. 
+`attheme-editor-api` requires `request-promise` (and `request` therefore) for running in Node.js. If you want to use `attheme-editor-api` in the browser, import `attheme-editor-api/browser` which uses `fetch` instead of `request-promise`.
