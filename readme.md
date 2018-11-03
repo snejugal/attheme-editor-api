@@ -1,12 +1,15 @@
 # `attheme-editor-api`
+
 A little package for handling .attheme editor API.
 
 ## Installing
+
 ```bash
 npm i attheme-editor-api
 ```
 
 ## Using
+
 ```js
 import * as atthemeEditorApi from "attheme-editor-api";
 
@@ -19,9 +22,10 @@ import * as atthemeEditorApi from "attheme-editor-api";
   const { name, theme } = await atthemeEditorApi.downloadTheme(themeId);
 
   console.log(name); // Somewhere I Belong
-  console.log(theme); // Attheme { divider: {...} }
+  console.log(theme); // Attheme { ... }
 })();
 ```
+
 ```js
 import Attheme from "attheme-js";
 import * as atthemeEditorApi from "attheme-editor-api";
