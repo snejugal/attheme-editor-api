@@ -1,2 +1,5 @@
 /.eslintrc.yaml
 /eslint-config.yaml
+tsconfig.json
+src/
+/**/*.map
