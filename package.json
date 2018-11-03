@@ -17,7 +17,16 @@
   },
   "homepage": "https://github.com/snejugal/attheme-editor-api#readme",
   "dependencies": {
-    "attheme-js": "^1.1.1",
-    "detect-node": "^2.0.3"
+    "attheme-js": "^2.0.0",
+    "detect-node": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/detect-node": "^2.0.0",
+    "@types/request-promise": "^4.1.42",
+    "typescript": "^3.1.6"
+  },
+  "scripts": {
+    "build": "npx tsc -p .",
+    "prepublishOnly": "npm run build"
   }
 }
