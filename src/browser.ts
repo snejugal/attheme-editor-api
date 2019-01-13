@@ -10,7 +10,11 @@ const makeRequest = async <T>(data: unknown) => {
 
   const json: T = await response.json();
 
-  return json;
+  if (response.ok) {
+    return json;
+  }
+
+  throw new Error((json as any as { error: string }).error);
 };
 
 export const {
