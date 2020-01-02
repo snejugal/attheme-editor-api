@@ -10,9 +10,8 @@ let makeRequest: Fetcher;
  * @param themeId The ID of the theme to open in .attheme editor.
  * @returns A URL to be opened in the browser.
  */
-const createOpenInEditorLink = (themeId: string) => (
-  `https://snejugal.ru/attheme-editor/?themeId=${themeId}`
-);
+const createOpenInEditorLink = (themeId: string) =>
+  `https://attheme-editor.snejugal.ru/?themeId=${themeId}`;
 
 /**
  * Upload theme to .attheme editor database.
@@ -20,10 +19,13 @@ const createOpenInEditorLink = (themeId: string) => (
  * @param options.theme The theme to upload.
  * @returns The themeId returned by API.
  */
-const uploadTheme = async({
+const uploadTheme = async ({
   name,
-  theme,
-}: { name: string, theme: Attheme }) => {
+  theme
+}: {
+  name: string;
+  theme: Attheme;
+}) => {
   let content = theme.toString();
 
   if (isNode) {
@@ -35,8 +37,8 @@ const uploadTheme = async({
   const { themeId } = await makeRequest<{ themeId: string }>({
     requestType: `uploadTheme`,
     name,
-    content,
-  })
+    content
+  });
 
   return themeId;
 };
@@ -48,11 +50,11 @@ const uploadTheme = async({
  */
 const downloadTheme = async (themeId: string) => {
   const { name, content } = await makeRequest<{
-    name: string,
-    content: string,
+    name: string;
+    content: string;
   }>({
     requestType: `downloadTheme`,
-    themeId,
+    themeId
   });
 
   let decodedContent;
@@ -67,7 +69,7 @@ const downloadTheme = async (themeId: string) => {
 
   return {
     name,
-    theme,
+    theme
   };
 };
 
@@ -77,8 +79,8 @@ export default (fetcher: Fetcher) => {
   return {
     createOpenInEditorLink,
     uploadTheme,
-    downloadTheme,
+    downloadTheme
   };
 };
 
-export const API_URL = `https://snejugal.ru/attheme-editor/api/`;
+export const API_URL = `https://attheme-editor.snejugal.ru/api/`;
